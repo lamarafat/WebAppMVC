@@ -23,21 +23,15 @@ namespace WebApplication3.Controllers
         }
 
         
-        public IActionResult Create()
-        {
-            return View();
-        }
-
-        
-        public IActionResult Create(Product product)
+        public IActionResult Create(Product request)
         {
             if (ModelState.IsValid)
             {
-                context.Products.Add(product);
+                context.Products.Add(request);
                 context.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(product);
+            return View("Create", request);
         }
 
 
