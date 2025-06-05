@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Products</title>
+</head>
+<body>
+
+    @model IEnumerable<WebApplication3.Models.Product>
+
+    <h2>Product List</h2>
+
+    <a href="@Url.Action("Create", "Product")" class="btn btn-dark mb-3">Create</a>
+
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5>@item.Name</h5>
+                        <p>@item.Description</p>
+                        <p><strong>Price:</strong> $@item.Price</p>
+                        <a href="@Url.Action("Details", "Product", new { id = item.Id })" class="btn btn-sm btn-outline-primary">Details</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    </body>
+    </html>

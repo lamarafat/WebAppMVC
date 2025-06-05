@@ -1,0 +1,19 @@
+﻿
+<!DOCTYPE html>
+    <html>
+    <head>
+        <title>Details</title>
+    </head>
+    <body>
+    @model WebApplication3.Models.Product
+
+    <div class="card mt-4">
+        <div class="card-body">
+            <h3>@Model.Name</h3>
+            <p>@Model.Description</p>
+            <p><strong>Price:</strong> $@Model.Price</p>
+        </div>
+    </div>
+
+    </body>
+    </html>
